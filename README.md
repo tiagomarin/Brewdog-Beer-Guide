@@ -1,5 +1,5 @@
 # Brewdog-Beer-Guide
-The BrewDog Beer Guide is a web application for beer lovers, in particular those who like the BrewDog brewery.
+The BrewDog Beer Guide is a web application for beer lovers, in particular those who like the BrewDog brewery. Here you find the details about the beers of that company.
 
 <br>
 
