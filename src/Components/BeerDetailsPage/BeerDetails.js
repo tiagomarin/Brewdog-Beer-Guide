@@ -1,16 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 // import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
 const BeerDetails = () => {
   const location = useLocation(); // access props sent by link
-  console.log(location);
   const beerData = location.state; // props from link
-  console.log(beerData);
-
-  useEffect(() => {
-    window.scrollTo(20, 0);
-  });
 
   // const dispatch = useDispatch();
   // useEffect(() => {
@@ -27,6 +21,45 @@ const BeerDetails = () => {
       </h2>
       <img alt={beerData.name} src={beerData.image_url} width="40px" />
       <p>{beerData.description}</p>
+      <p>{beerData.food_pairing}</p>
+      <ul>
+        <li>{beerData.abv}</li>
+        <li>{beerData.ibu}</li>
+        <li>
+          <ul>
+            {beerData.ingredients.hops.map((item) => (
+              <li
+                key={item.name}
+              >
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        </li>
+      </ul>
+      {/*
+    "hops": [
+        {
+          "name": "Ahtanum",
+          "amount": {
+            "value": 17.5,
+            "unit": "grams"
+           },
+           "add": "start",
+           "attribute": "bitter"
+         },
+         {
+           "name": "Chinook",
+           "amount": {
+             "value": 15,
+             "unit": "grams"
+           },
+           "add": "start",
+           "attribute": "bitter"
+         },
+         ...
+      ],
+      "yeast": "Wyeast 1056 - American Ale™" */}
     </li>
   );
 };
