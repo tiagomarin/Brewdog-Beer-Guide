@@ -1,25 +1,69 @@
-// import React from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
-// const BitternessFilter = (props) => {
-//   const {setBitterness} = props
-//   return (
-//     <select
-//       className="filter-menu"
-//       name="filter"
-//       onChange={(e) => {
-//         setBitterness(e.target.value);
-//       }}
-//       required
-//     >
-//       <option value="">filter by bitterness</option>
-//       <option value="Very low">very low</option>
-//       <option value="Low">Low</option>
-//       <option value="Medium">Medium</option>
-//       <option value="High">High</option>
-//       <option value="Very high">Very high</option>
-//       <option value="Ultra high">Ultra high</option>
-//     </select>
-//   )
-// }
+import {
+  changeFilter,
+  veryLow,
+  low,
+  medium,
+  high,
+  veryHigh,
+  ultraHigh,
+} from '../../Redux/beersSlice';
 
-// export default BitternessFilter;
+const BitternessFilter = () => {
+  const dispatch = useDispatch();
+
+  const bitternessFilterHandler = (filter) => {
+    dispatch(changeFilter(filter));
+    switch (filter) {
+      case 'Very low':
+        dispatch(veryLow());
+        break;
+      case 'Low':
+        dispatch(low());
+        break;
+      case 'Medium':
+        dispatch(medium());
+        break;
+      case 'High':
+        dispatch(high());
+        break;
+      case 'Very high':
+        dispatch(veryHigh());
+        break;
+      case 'Ultra high':
+        dispatch(ultraHigh());
+        break;
+      default:
+        break;
+    }
+  };
+
+  return (
+    <select
+      className="filter-menu"
+      name="filter"
+      onChange={(e) => {
+        bitternessFilterHandler(e.target.value);
+      }}
+    >
+      <option value="">All Beers</option>
+      <option value="Very low">very low</option>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+      <option value="Very high">Very high</option>
+      <option value="Ultra high">Ultra high</option>
+    </select>
+  );
+};
+
+export default BitternessFilter;
+
+/* <button
+    type="button"
+    onClick={bitternessFilterHandler(filter)}
+  >
+    filter
+  </button> */
