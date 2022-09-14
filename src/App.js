@@ -10,7 +10,6 @@ function App() {
     <>
       {/* <NavBar /> */}
       <main>
-        <h1>Testing</h1>
         <Routes>
           <Route path="/" element={<BeerList />} />
           <Route path="BeerDetails" element={<BeerDetails />} />

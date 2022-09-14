@@ -9,33 +9,60 @@ export const getBeers = createAsyncThunk(
   },
 );
 
-export const getBeerDetails = createAsyncThunk(
-  'beers/getBeerDetails',
-  async (ID) => {
-    const response = await fetch(`https://api.punkapi.com/v2/beers/${ID}`);
-    const BeerDetails = await response.json();
-    return BeerDetails;
-  },
-);
-
-// const initialState = {
-//   value: 0,
-//   status: 'idle',
-// };
-
-const initialState = [];
+const initialState = {
+  filter: 'All Beers',
+  allBeers: [],
+  filtered: [],
+  status: 'idle',
+};
 
 const beersSlice = createSlice({
   name: 'beers',
   initialState,
-  reducers: {},
+  reducers: {
+    changeFilter: (state, action) => {
+      state.filter = action.payload;
+    },
+    veryLow: (state) => {
+      state.filtered = state.allBeers.filter((element) => element.ibu <= 15);
+    },
+    low: (state) => {
+      state.filtered = state.allBeers.filter((element) => element.ibu > 15 && element.ibu <= 30);
+    },
+    medium: (state) => {
+      state.filtered = state.allBeers.filter((element) => element.ibu > 30 && element.ibu <= 50);
+    },
+    high: (state) => {
+      state.filtered = state.allBeers.filter((element) => element.ibu > 50 && element.ibu <= 70);
+    },
+    veryHigh: (state) => {
+      state.filtered = state.allBeers.filter((element) => element.ibu > 70 && element.ibu <= 90);
+    },
+    ultraHigh: (state) => {
+      state.filtered = state.allBeers.filter((element) => element.ibu > 90);
+    },
+  },
   extraReducers: (builder) => {
-    builder.addCase(getBeers.fulfilled, (state, action) => action.payload);
-    builder.addCase(getBeerDetails.fulfilled, (state, action) => action.payload);
+    builder
+      .addCase(getBeers.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(getBeers.fulfilled, (state, action) => {
+        state.allBeers = action.payload;
+        state.status = 'fulfilled';
+      });
   },
 });
 
-export const { beersReducer } = beersSlice.actions;
+export const {
+  changeFilter,
+  veryLow,
+  low,
+  medium,
+  high,
+  veryHigh,
+  ultraHigh,
+} = beersSlice.actions;
 
 export default beersSlice.reducer;
 
@@ -46,3 +73,61 @@ export default beersSlice.reducer;
 //   state.status = 'idle';
 //   state.value = action.payload;
 // });
+
+// bitternessFilter: (state, bitterness) => {
+//   switch (bitterness) {
+//     case 'Very low':
+//       return state.filter((element) => element.ibu <= 15);
+//     case 'Low':
+//       return state.filter((element) => element.ibu <= 30);
+//     case 'Medium':
+//       return state.filter((element) => element.ibu <= 50);
+//     case 'High':
+//       return state.filter((element) => element.ibu <= 70);
+//     case 'Very high':
+//       return state.filter((element) => element.ibu <= 90);
+//     case 'Ultra high':
+//       return state.filter((element) => element.ibu > 90);
+//     default:
+//       return state;
+//   }
+// },
+
+// bitternessFilter: (state, action) => {
+//   switch (action.payload) {
+//     case 'Very low':
+//       return (
+//         state.filtered = state.unfiltered.filter((element) => element.ibu <= 15)
+//       );
+//     case 'Low':
+//       return (
+//         state.filtered = state.unfiltered.filter(
+//           (element) => element.ibu > 15 && element.ibu <= 30,
+//         )
+//       );
+//     case 'Medium':
+//       return (
+//         state.filtered = state.unfiltered.filter(
+//           (element) => element.ibu > 30 && element.ibu <= 50,
+//         )
+//       );
+//     case 'High':
+//       return (
+//         state.filtered = state.unfiltered.filter(
+//           (element) => element.ibu > 50 && element.ibu <= 70,
+//         )
+//       );
+//     case 'Very high':
+//       return (
+//         state.filtered = state.unfiltered.filter(
+//           (element) => element.ibu > 70 && element.ibu <= 90,
+//         )
+//       );
+//     case 'Ultra high':
+//       return (
+//         state.filtered = state.unfiltered.filter((element) => element.ibu > 90)
+//       );
+//     default:
+//       return state;
+//   }
+// },
