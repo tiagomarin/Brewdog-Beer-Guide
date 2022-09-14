@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
   changeFilter,
@@ -13,7 +13,7 @@ import {
 
 const BitternessFilter = () => {
   const dispatch = useDispatch();
-
+  const filter = useSelector((state) => state.beers.filter);
   const bitternessFilterHandler = (filter) => {
     dispatch(changeFilter(filter));
     switch (filter) {
@@ -48,8 +48,9 @@ const BitternessFilter = () => {
         bitternessFilterHandler(e.target.value);
       }}
     >
-      <option value="">All Beers</option>
-      <option value="Very low">very low</option>
+      <option value="">{filter}</option>
+      <option value="All Beers">All Beers</option>
+      <option value="Very low">Very low</option>
       <option value="Low">Low</option>
       <option value="Medium">Medium</option>
       <option value="High">High</option>

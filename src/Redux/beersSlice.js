@@ -10,7 +10,7 @@ export const getBeers = createAsyncThunk(
 );
 
 const initialState = {
-  filter: 'All beers',
+  filter: 'All Beers',
   allBeers: [],
   filtered: [],
   status: 'idle',

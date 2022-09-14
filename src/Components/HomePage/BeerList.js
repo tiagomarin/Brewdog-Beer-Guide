@@ -19,10 +19,11 @@ const BeerList = () => {
 
   return (
     <ul className="beer-list-page">
-      <h2>list of ALL beers</h2>
+      {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
+      <h2>{filter.toUpperCase()} bitterness beers</h2>
       <BitternessFilter />
       {/* list items */}
-      {filter === '' || filter === 'All beers'
+      {filter === '' || filter === 'All Beers'
         ? beerList.map((item) => (
           <Link
             to="/BeerDetails"
