@@ -19,8 +19,11 @@ const BeerList = () => {
 
   return (
     <ul className="beer-list-page">
-      {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-      <h2>{filter.toUpperCase()} bitterness beers</h2>
+      {
+        filter === 'All Beers'
+          ? <h2>All Beers</h2>
+          : <h2>{filter.toUpperCase()} bitterness beers</h2>
+      }
       <BitternessFilter />
       {/* list items */}
       {filter === '' || filter === 'All Beers'

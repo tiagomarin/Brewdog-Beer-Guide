@@ -11,18 +11,13 @@ const BeerDetails = () => {
   return (
     <li className="beer-page">
       <Link to="/">back</Link>
-      <h2>
-        beer name :
-        {beerData.name}
-      </h2>
+      <h3>{beerData.name}</h3>
       <img alt={beerData.name} src={beerData.image_url} width="40px" />
       <p>{beerData.description}</p>
-      <h3>Pair this beer with: </h3>
+      <h4>Pair this beer with: </h4>
       <p>{beerData.food_pairing}</p>
       <ul>
-        {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
         <li>ABV {beerData.abv}%</li>
-        {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
         <li>IBU {beerData.ibu}</li>
         <li className="ingredients">
           <ul className="hops">
