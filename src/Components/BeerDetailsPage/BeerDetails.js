@@ -1,59 +1,62 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
-import hopsIcon from '../../assets/hops_icon.svg';
-import maltsIcon from '../../assets/malts_icon.svg';
+import backIcon from '../../assets/back-icon.png';
+import ibuIcon from '../../assets/ibu-bg.png';
+import beerIcon from '../../assets/beer-icon-fat.png';
+import hopsIcon from '../../assets/hops-icon.png';
+import maltsIcon from '../../assets/malt-icon.png';
+import './BeerDetails.css';
+import pairWith from '../../assets/pair-with-icon.png';
 
 const BeerDetails = () => {
-  const location = useLocation(); // access props sent by link
-  const beerData = location.state; // props from link
+  const location = useLocation(); // access props/state sent by link
+  const beerData = location.state; // props/state from link
+
+  const hops = [];
+  beerData.ingredients.hops.forEach((element) => hops.push(element.name));
+
+  const malts = [];
+  beerData.ingredients.malt.forEach((element) => malts.push(element.name));
 
   return (
-    <li className="beer-page">
-      <Link to="/">back</Link>
+    <li className="details-page">
+      <Link to="/">
+        <img alt="back" src={backIcon} className="back" />
+      </Link>
       <h3>{beerData.name}</h3>
-      <img alt={beerData.name} src={beerData.image_url} width="40px" />
-      <p>{beerData.description}</p>
-      <h4>Pair this beer with: </h4>
-      <p>{beerData.food_pairing}</p>
-      <ul>
-        <li>ABV {beerData.abv}%</li>
-        <li>IBU {beerData.ibu}</li>
-        <li className="ingredients">
-          <ul className="hops">
-            <span>
-              <img src={hopsIcon} alt="hops icon" />
-              HOPS
-            </span>
-            {beerData.ingredients.hops.map((item) => (
-              <li key={item.name}>{item.name}</li>
-            ))}
-          </ul>
-          <ul className="malts">
-            <span>
-              <img src={maltsIcon} alt="hops icon" />
-              Malts
-            </span>
-            {beerData.ingredients.malt.map((item) => (
-              <li key={item.name}>{item.name}</li>
-            ))}
-          </ul>
-        </li>
-      </ul>
+      <div>
+        {/* <img alt={beerData.name} src={beerData.image_url} width="40%" /> */}
+        <div className="specs">
+          <div
+            className="ibu-details"
+            style={{ backgroundImage: `url(${ibuIcon})` }}
+          >
+            IBU
+            <br />
+            <br />
+            {beerData.ibu ? beerData.ibu : 'N/A'}
+          </div>
+          <div className="abv" style={{ backgroundImage: `url(${beerIcon})` }}>ABV <br /><br /> {beerData.abv}%</div>
+        </div>
+      </div>
+      <p className="description">{beerData.description}</p>
+      <div className="info">
+        <img alt="icon" src={pairWith} style={{ width: '10vmin' }} />
+        <h4>Pair with </h4>
+        <p>{beerData.food_pairing}</p>
+      </div>
+      <div className="info">
+        <img src={hopsIcon} alt="hops icon" style={{ width: '10vmin' }} />
+        <h4>Hops</h4>
+        <p>{malts}</p>
+      </div>
+      <div className="info">
+        <img src={maltsIcon} alt="hops icon" style={{ width: '10vmin' }} />
+        <h4>Malts</h4>
+        <p>{malts}</p>
+      </div>
     </li>
   );
 };
-
-// BeerDetails.propTypes = {
-//   beerID: PropTypes.shape(
-//     {
-//       // rocket_id: PropTypes.string,
-//       // rocket_name: PropTypes.string,
-//       // description: PropTypes.string,
-//       // reserved: PropTypes.bool,
-//       // flickr_images: PropTypes.arrayOf(PropTypes.string),
-//     },
-//   ).isRequired,
-// };
 
 export default BeerDetails;

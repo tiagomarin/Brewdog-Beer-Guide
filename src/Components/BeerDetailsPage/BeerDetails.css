@@ -1,0 +1,82 @@
+.back {
+  width: 8vmin;
+  position: absolute;
+  right: 6%;
+  top: 2%;
+}
+
+.details-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #043552;
+  font-size: 6vmin;
+  text-align: center;
+  gap: 2rem;
+  background-color: #207fb7;
+  padding-bottom: 6vmax;
+  padding-top: 10vmin;
+}
+
+.details-page > h3 {
+  width: 80%;
+  color: #043552;
+  font-size: 10vmin;
+}
+
+.details-page > * {
+  width: 90%;
+}
+
+.specs {
+  display: flex;
+  justify-content: center;
+}
+
+.specs > * {
+  padding: 17vmin 0 12vmin;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  font-family: Veneer, sans-serif;
+  font-size: 4vmin;
+  color: #043552;
+}
+
+.ibu-details {
+  width: 35%;
+}
+
+.abv {
+  width: 40%;
+}
+
+.description {
+  font-size: 5.2vmin;
+  font-family: Veneer, sans-serif;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 6fr;
+  align-items: center;
+  gap: 4vmin;
+  min-height: 20vmin;
+  padding: 2vmin;
+  text-align: left;
+  border-radius: 2vmin;
+  background-color: #043552;
+  font-family: Veneer3, sans-serif;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.info > h4 {
+  padding-top: 2vmin;
+}
+
+.info > p {
+  font-size: 3vmin;
+  font-family: Claredon, sans-serif;
+}
