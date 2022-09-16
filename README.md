@@ -1,5 +1,5 @@
 # Brewdog-Beer-Guide
-The BrewDog Beer Guide is a web application for beer lovers, in particular those who like the BrewDog brewery. Here you find the details about the beers of that company.
+The BrewDog Beer Guide is a web application for beer lovers, in particular those who like the BrewDog brewery. Here you filter the beers according to their bitterness level and also you can find more details about the beers of that company.
 
 <br>
 
@@ -19,8 +19,8 @@ The BrewDog Beer Guide is a web application for beer lovers, in particular those
 ## Live demo
 
 <br>
-Not available yet
-<!-- You can access the live demo through this [link]() -->
+
+You can access the live demo through this [link](https://brewdog-beer-guide.netlify.app/)
 
 <br>
 <br>
