@@ -20,8 +20,6 @@ Beer.propTypes = {
       image_url: PropTypes.string,
       abv: PropTypes.number,
       ibu: PropTypes.number,
-      // reserved: PropTypes.bool,
-      // flickr_images: PropTypes.arrayOf(PropTypes.string),
     },
   ).isRequired,
 };

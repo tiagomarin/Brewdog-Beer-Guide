@@ -14,7 +14,7 @@ const BeerList = () => {
 
   useEffect(() => {
     if (!beerList.length) {
-      dispatch(getBeers());
+      dispatch(getBeers(beerList));
     }
   });
 

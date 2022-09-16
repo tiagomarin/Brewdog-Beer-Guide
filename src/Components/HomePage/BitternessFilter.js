@@ -63,10 +63,3 @@ const BitternessFilter = () => {
 };
 
 export default BitternessFilter;
-
-/* <button
-    type="button"
-    onClick={bitternessFilterHandler(filter)}
-  >
-    filter
-  </button> */
