@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.home-page>* {
+.home-page > * {
   width: 100%;
 }
 
@@ -31,7 +31,7 @@ h2 {
   font-family: Veneer, sans-serif;
 }
 
-.filter-menu>option {
+.filter-menu > option {
   font-size: 4vmin;
   width: 100vw;
 }
