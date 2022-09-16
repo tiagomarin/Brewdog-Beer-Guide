@@ -6,7 +6,7 @@
   gap: 2rem;
 }
 
-.beer-component > * {
+.beer-component>* {
   width: 50%;
 }
 
@@ -34,7 +34,19 @@ h3 {
   background-position: center;
 }
 
-.ibu > div > span {
+.ibu>div>span {
   font-size: 3vmin;
   font-weight: normal;
+}
+
+@media screen and (min-width: 415px) {
+  h3 {
+    font-size: 3.4vmin;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  h3 {
+    font-size: 5vmin;
+  }
 }
