@@ -1,19 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Beer.css';
 
 const Beer = (props) => {
   const { beerData } = props;
 
   return (
-    <li className="beer-card">
+    <li className="beer-component">
       <h3>{beerData.name}</h3>
-      <div>
-        <img alt={beerData.name} src={beerData.image_url} width="40px" />
-        <div>
-          <span>IBU</span>
-          {beerData.ibu}
-        </div>
-      </div>
+      <div className="ibu">{beerData.ibu ? beerData.ibu : 'N/A'}<br /><span>IBU</span></div>
     </li>
   );
 };

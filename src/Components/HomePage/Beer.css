@@ -1,0 +1,40 @@
+.beer-component {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.beer-component > * {
+  width: 50%;
+}
+
+h3 {
+  width: 100%;
+  font-size: 5vmin;
+  align-self: center;
+}
+
+.ibu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 50%;
+  height: 30vmin;
+  font-family: Veneer, sans-serif;
+  letter-spacing: 0.3vmin;
+  font-size: 4vmin;
+  text-align: center;
+  background-image: url("../../assets/ibu-bg2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ibu > div > span {
+  font-size: 3vmin;
+  font-weight: normal;
+}
