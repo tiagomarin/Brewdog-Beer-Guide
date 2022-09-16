@@ -19,6 +19,18 @@ h2 {
 .filter-wrapper {
   padding: 0 2rem 0 0;
   background-color: black;
+  display: flex;
+  align-items: center;
+}
+
+.filter-title {
+  padding: 4vmin;
+  font-family: Veneer, sans-serif;
+  font-size: 4.2vmin;
+  color: #44a3da;
+  /* stylelint-disable */
+  min-width: fit-content;
+  /* stylelint-enable */
 }
 
 .filter-menu {
@@ -26,7 +38,7 @@ h2 {
   border: 1px solid #000;
   color: #44a3da;
   width: 100%;
-  padding: 4vmin;
+  padding: 2vmin;
   font-size: 6vmin;
   font-family: Veneer, sans-serif;
 }

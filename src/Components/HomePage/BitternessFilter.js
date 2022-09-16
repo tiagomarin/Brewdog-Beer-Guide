@@ -42,6 +42,7 @@ const BitternessFilter = () => {
 
   return (
     <div className="filter-wrapper ">
+      <p className="filter-title">FILTER BY BITTERNESS</p>
       <select
         className="filter-menu"
         name="filter"
