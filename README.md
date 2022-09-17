@@ -33,8 +33,7 @@ You can access the live demo through this [link](https://brewdog-beer-guide.netl
 
 <br>
 
-<div style="position: relative; padding-bottom: 42.1875%; height: 0;"><iframe src="https://www.loom.com/embed/e0293b8ef0194bf989d17a0910f9d3f4" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
+I made a Loom video showing the most interesting aspect of the project. Access by [this link](https://www.loom.com/embed/e0293b8ef0194bf989d17a0910f9d3f4).
 
 <br>
 <br>
