@@ -3,6 +3,10 @@ The BrewDog Beer Guide is a web application for beer lovers, in particular those
 
 <br>
 
+<img alt="sreenshot" src="./src/assets/screenshots.png" width="70%">
+
+<br>
+
 ## Built With
 
 <br>
@@ -21,6 +25,16 @@ The BrewDog Beer Guide is a web application for beer lovers, in particular those
 <br>
 
 You can access the live demo through this [link](https://brewdog-beer-guide.netlify.app/)
+
+<br>
+<br>
+
+## Video presentation
+
+<br>
+
+<div style="position: relative; padding-bottom: 42.1875%; height: 0;"><iframe src="https://www.loom.com/embed/e0293b8ef0194bf989d17a0910f9d3f4" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 
 <br>
 <br>
